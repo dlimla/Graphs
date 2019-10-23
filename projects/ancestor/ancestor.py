@@ -15,6 +15,7 @@ class Graph:
             self.add_node(v1)
         if v2 not in self.vertices:
             self.add_node(v2)
+        # and since we are techincally going "backwards" we add the vertices the same way
         self.vertices[v2].add(v1)
 
 class Queue():
@@ -44,7 +45,7 @@ def bft(graph, starting_node):
     q = Queue()
     # then we add the starting node to it, we also add it in as an array
     q.enqueue([starting_node])
-    # the we create "visited" list so we can keep track of the nodes we visisted and don't loop forever
+    # then we create a "visited" list so we can keep track of the nodes we visited and don't loop forever
     visited = set()
     # then we create an array of "all paths" so we can compair and find the longest one
     all_paths = []
